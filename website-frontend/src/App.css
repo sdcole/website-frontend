@@ -1,0 +1,131 @@
+
+#container {
+  
+}
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+.App {
+  text-align: center;
+  font-family: 'Roboto', serif;
+}
+.form {
+  margin: 10vh;
+}
+.form-element {
+  margin: 2vh;
+}
+
+#header-logo {
+  height: 8vmin;
+  padding: 10px;
+  float : left;
+}
+
+#footer-socials {
+  align : center;
+  height: 2vmin;
+  /*padding: 4vmin;*/
+  
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    /*animation: App-logo-spin infinite 20s linear;*/
+  }
+}
+
+#nav {
+  text-decoration-color: #61dafb;
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+  color: white;
+  
+  
+}
+
+#header {
+  background-color: #393E46;
+  text-decoration-color: #61dafb;
+  min-height: 10vh;
+  color:white;
+}
+
+#content {
+  background-color: #00ADB5;
+  text-decoration-color: #61dafb;
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+  min-height: 80vh;
+  color: white;
+  
+  
+}
+
+#news {
+  margin-top: 15vh;
+}
+
+
+.text-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+#logo-text {
+  float: left;
+  padding-left: 5vh;
+  padding-top: 1vh;
+  font-size: 25px;
+}
+
+ul#nav li {
+  float: right;
+  padding-right: 25px;
+  padding-top: 30px;
+}
+.App-content {
+  background-color: #00ADB5;
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-footer {
+  background-color: #EEEEEE;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  /*align-items: center;
+  justify-content: center;
+  */
+  font-size: calc(10px + vmin);
+  color: rgb(0, 0, 0);
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loading-spinner {
+
+  animation: spinner 1.5s linear infinite;
+}
+
+.MuiInput-root {
+  border-bottom: 1px solid white !important;
+}
+
+
