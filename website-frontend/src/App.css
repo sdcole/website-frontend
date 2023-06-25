@@ -1,6 +1,19 @@
 
 #container {
-  
+  height: 100vh;
+  width: 100vh;
+}
+
+#tournament {
+  margin: 0;
+  padding: 0;
+  font-size: 2vh;
+  height: inherit;
+  width: inherit;
+}
+
+.ul-left {
+  list-style-type: none;
 }
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 .App {
@@ -12,6 +25,13 @@
 }
 .form-element {
   margin: 2vh;
+}
+
+.direction {
+  position: absolute;
+  bottom: 10vh;
+  left: 1vh;
+  font-size: 13px;
 }
 
 #header-logo {
@@ -46,7 +66,8 @@
 #header {
   background-color: #393E46;
   text-decoration-color: #61dafb;
-  min-height: 10vh;
+  height: 10vh;
+  margin: 0;
   color:white;
 }
 
@@ -55,8 +76,8 @@
   text-decoration-color: #61dafb;
   list-style-type: none;
   margin: 0;
-  overflow: hidden;
-  min-height: 80vh;
+
+  height: 80vh;
   color: white;
   
   
@@ -75,18 +96,18 @@
 #logo-text {
   float: left;
   padding-left: 5vh;
-  padding-top: 1vh;
-  font-size: 25px;
+  font-size: 3vh;
 }
 
 ul#nav li {
   float: right;
-  padding-right: 25px;
-  padding-top: 30px;
+  padding-right: 3vh;
+  padding-top: 4vh;
+  font-size: 2vh;
 }
 .App-content {
   background-color: #00ADB5;
-  min-height: 75vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -97,7 +118,7 @@ ul#nav li {
 
 .App-footer {
   background-color: #EEEEEE;
-  min-height: 10vh;
+  height: 10vh;
   display: flex;
   flex-direction: column;
   /*align-items: center;

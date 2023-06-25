@@ -22,7 +22,13 @@ const TournamentForm = () => {
 //handler
 const handleClick = (event: React.MouseEvent<HTMLElement>, text: string) => {
 
-    let response = addUser(steamID, discordID);
+    if (steamID === "" || discordID === "") {
+        setUpdateText("One or more of the fields is empty.");
+    }
+    else {
+        let response = addUser(steamID, discordID);
+    }
+    
   };
 
 
@@ -30,31 +36,42 @@ const handleClick = (event: React.MouseEvent<HTMLElement>, text: string) => {
   async function addUser(_steamID: string, _discordID: string) {
     setIsClicked(true);
     setIsLoading(true);
+    
     const formPostData = {
       method: 'POST',
       headers: {mode: 'no-cors', 'Content-Type': 'application/json'},
       body: JSON.stringify({steamID: _steamID, discordID: _discordID}) 
     }
-    const response = await fetch(LOCALHOST + "/api/main/post", formPostData);
-    const jsonResult = await response.json();
-    let jsonResponse = JSON.parse(jsonResult);
+    try {
+        const response = await fetch(LOCALHOST + "/api/main/post", formPostData);
+        const jsonResult = await response.json();
+        let jsonResponse = JSON.parse(jsonResult);
+
+        if (jsonResponse.success === true) {
+            //alert("Thank you " + jsonResponse.steam_name + " you were signed up sucessfully\n" );
+            setImageSrc(jsonResponse.steam_avatar);
+            setSteamName(jsonResponse.steam_name);
+            setUpdateText("You have signed up successfully.");
+    
+        }
+        else {
+            setUpdateText("There was an error please ensure your steamID is correct and try again.");
+        }
+        setIsClicked(false);
+        setIsLoading(false);
+        return response;
+    }
+    catch (error){
+        setUpdateText("There was an error connecting to the server please try again.");
+        setIsClicked(false);
+        setIsLoading(false);
+    }
+    
 
 
     
 
-    if (jsonResponse.success === true) {
-        //alert("Thank you " + jsonResponse.steam_name + " you were signed up sucessfully\n" );
-        setImageSrc(jsonResponse.steam_avatar);
-        setSteamName(jsonResponse.steam_name);
-        setUpdateText("You have signed up successfully.");
-
-    }
-    else {
-        setUpdateText("There was an error please ensure your steamID is correct and try again.");
-    }
-    setIsClicked(false);
-    setIsLoading(false);
-    return response;
+    
 }
 
 

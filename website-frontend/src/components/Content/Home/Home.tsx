@@ -2,6 +2,7 @@ import '../../../App.css';
 const Home = () => {
     return (
         <div className="home">
+            <br></br>
             <h1>Welcome to my website!</h1>
             <p>Take a look around!</p>
             <div id="news">
