@@ -6,7 +6,7 @@ import Button from '@mui/material/Button';
 import LoadingSpinner from '../Materials/LoadingSpinner';
 
 const TournamentForm = () => {
-    const LOCALHOST = 'https://192.168.0.81:7268';
+    const PROXY = 'https://v1.nocodeapi.com/saebastion/ep/NfYBIrynVPsMmGZq';
     const [steamID, setSteamID] = useState("");
     const [discordID, setDiscordID] = useState("");
 
@@ -36,16 +36,16 @@ const handleClick = (event: React.MouseEvent<HTMLElement>, text: string) => {
   async function addUser(_steamID: string, _discordID: string) {
     setIsClicked(true);
     setIsLoading(true);
-    
+    console.log(JSON.stringify({steamID: _steamID, discordID: _discordID}));
     const formPostData = {
       method: 'POST',
       headers: {mode: 'no-cors', 'Content-Type': 'application/json'},
       body: JSON.stringify({steamID: _steamID, discordID: _discordID}) 
     }
     try {
-        const response = await fetch(LOCALHOST + "/api/main/post", formPostData);
+        const response = await fetch(PROXY, formPostData);
         const jsonResult = await response.json();
-        let jsonResponse = JSON.parse(jsonResult);
+        let jsonResponse = jsonResult;
 
         if (jsonResponse.success === true) {
             //alert("Thank you " + jsonResponse.steam_name + " you were signed up sucessfully\n" );
@@ -55,6 +55,7 @@ const handleClick = (event: React.MouseEvent<HTMLElement>, text: string) => {
     
         }
         else {
+            console.log(jsonResponse);
             setUpdateText("There was an error please ensure your steamID is correct and try again.");
         }
         setIsClicked(false);
@@ -62,6 +63,7 @@ const handleClick = (event: React.MouseEvent<HTMLElement>, text: string) => {
         return response;
     }
     catch (error){
+        console.log(error);
         setUpdateText("There was an error connecting to the server please try again.");
         setIsClicked(false);
         setIsLoading(false);
@@ -87,7 +89,7 @@ const handleClick = (event: React.MouseEvent<HTMLElement>, text: string) => {
                     required
                     id = "standard-required"
                     label = "SteamID"
-                    defaultValue = "Hello World"
+                    defaultValue = ""
 
                     value = {steamID}
                     onChange = {(e) => {
@@ -101,7 +103,7 @@ const handleClick = (event: React.MouseEvent<HTMLElement>, text: string) => {
                     required
                     id = "standard-required"
                     label = "DiscordID"
-                    defaultValue = "Hello World"
+                    defaultValue = ""
 
                     value = { discordID }
                     onChange = {(e) => {
