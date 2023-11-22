@@ -64,21 +64,21 @@
 }
 
 #header {
-  background-color: #393E46;
+  background-color: #739072;
   text-decoration-color: #61dafb;
   height: 10vh;
   margin: 0;
-  color:white;
+  color:#ECE3CE;
 }
 
 #content {
-  background-color: #00ADB5;
-  text-decoration-color: #61dafb;
+  background-color: #ECE3CE;
+  text-decoration-color: #4F6F52;
   list-style-type: none;
   margin: 0;
 
   height: 80vh;
-  color: white;
+  color: #4F6F52;
   
   
 }
@@ -113,11 +113,11 @@ ul#nav li {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #4F6F52;
 }
 
 .App-footer {
-  background-color: #EEEEEE;
+  background-color: #3A4D39;
   height: 10vh;
   display: flex;
   flex-direction: column;
@@ -125,7 +125,7 @@ ul#nav li {
   justify-content: center;
   */
   font-size: calc(10px + vmin);
-  color: rgb(0, 0, 0);
+  color: #ECE3CE;
 }
 
 .App-link {

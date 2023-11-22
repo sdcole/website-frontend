@@ -1,7 +1,7 @@
 import '../../../App.css';
 import fbLogo from '../../../images/facebook.png'
 import igLogo from '../../../images/instagram.png'
-import githubLogo from '../../../images/github.png'
+import githubLogo from '../../../images/github.svg'
 import linkedinLogo from '../../../images/linkedin.png'
 
 const Footer = () => {

@@ -6,15 +6,20 @@ import Button from '@mui/material/Button';
 import LoadingSpinner from '../Materials/LoadingSpinner';
 
 const TournamentForm = () => {
-    const LOCALHOST = 'https://192.168.0.81:7268';
+    //const PROXY = 'https://v1.nocodeapi.com/saebastion/ep/NfYBIrynVPsMmGZq';
+    const PROXY = 'https://192.168.0.81:7268/api/main/post';
     const [steamID, setSteamID] = useState("");
     const [discordID, setDiscordID] = useState("");
 
     const [isClicked, setIsClicked] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
 
-    const [imageSrc, setImageSrc] = useState('');
+    const [steamImageSrc, setSteamImageSrc] = useState('');
     const [steamName, setSteamName] = useState('');
+
+    const [discordImageSrc, setDiscordImageSrc] = useState('');
+    const [discordName, setDiscordName] = useState('');
+
     const [updateText, setUpdateText] = useState('');
 
 
@@ -43,19 +48,35 @@ const handleClick = (event: React.MouseEvent<HTMLElement>, text: string) => {
       body: JSON.stringify({steamID: _steamID, discordID: _discordID}) 
     }
     try {
-        const response = await fetch(LOCALHOST + "/api/main/post", formPostData);
-        const jsonResult = await response.json();
-        let jsonResponse = JSON.parse(jsonResult);
+        const response = await fetch(PROXY, formPostData);
+        const jsonResult = response;
+        let jsonResponse = await jsonResult.json();
 
-        if (jsonResponse.success === true) {
+        if (response.status === 200) {
             //alert("Thank you " + jsonResponse.steam_name + " you were signed up sucessfully\n" );
-            setImageSrc(jsonResponse.steam_avatar);
-            setSteamName(jsonResponse.steam_name);
+            console.log(jsonResponse);
+            setSteamImageSrc(jsonResponse.steamAvatar);
+            setSteamName(jsonResponse.steamName);
+            setDiscordName(jsonResponse.discordUserName);
+            setDiscordImageSrc(jsonResponse.discordAvatar);
             setUpdateText("You have signed up successfully.");
     
         }
         else {
-            setUpdateText("There was an error please ensure your steamID is correct and try again.");
+            console.log(jsonResponse);
+            if (jsonResponse.validSteamUser == false && jsonResponse.validDiscordUser == false) {
+                setUpdateText("There was an error please ensure your SteamID and DiscordID is correct and try again.");
+            }
+            else if (jsonResponse.validSteamUser == false) {
+                setUpdateText("There was an error please ensure your SteamID is correct and try again.");
+            }
+            else if (jsonResponse.validDiscordUser == false) {
+                setUpdateText("There was an error please ensure your DiscordID is correct and try again.");
+            }
+            else {
+                setUpdateText("There was an error please ensure data provided is correct and try again.");
+            }
+            
         }
         setIsClicked(false);
         setIsLoading(false);
@@ -119,9 +140,11 @@ const handleClick = (event: React.MouseEvent<HTMLElement>, text: string) => {
                     </div>
                     
             </div>
-            <img src={imageSrc}></img>
+            
+            <img src={steamImageSrc}></img>
                     <p>{steamName}</p>
-                    <br></br>
+                    
+            <br></br>
                     <p>{updateText}</p>
 
                         {isLoading ? <LoadingSpinner /> : null}
