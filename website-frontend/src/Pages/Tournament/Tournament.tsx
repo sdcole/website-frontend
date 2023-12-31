@@ -1,7 +1,7 @@
-import '../../../App.css';
+import '../../App.css';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
-import TournamentForm from './TournamentForm';
+import TournamentForm from '../../components/Forms/TournamentForm';
 const Tournament = () => {
     return (
       <div id="tournament">

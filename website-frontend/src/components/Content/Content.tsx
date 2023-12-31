@@ -1,10 +1,9 @@
 import '../../App.css';
 import { Routes, Route } from 'react-router-dom';
-import Home from './Home/Home';
-import About from './About/About';
-import Resume from './Resume/Resume';
-import Projects from './Projects/Projects';
-import Tournament from './TournamentPage/Tournament'
+import Home from '../../Pages/Home/Home';
+import About from '../../Pages/About/About';
+import Projects from '../../Pages/Projects/Projects';
+import Tournament from '../../Pages/Tournament/Tournament'
 
 const Content = () => {
 return (
@@ -12,7 +11,6 @@ return (
     <Routes>
       <Route path='/' element={<Home/>} />
       <Route path='/about' element={<About/>} />
-      <Route path='/resume' element={<Resume/>} />
       <Route path='/projects' element={<Projects/>} />
       <Route path='/tournament' element={<Tournament/>} />
     </Routes>

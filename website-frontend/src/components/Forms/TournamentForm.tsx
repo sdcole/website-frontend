@@ -1,9 +1,9 @@
-import '../../../App.css';
+import '../../App.css';
 import {useState} from "react";
 import React, { MouseEvent } from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import LoadingSpinner from '../Materials/LoadingSpinner';
+import LoadingSpinner from '../Content/Materials/LoadingSpinner';
 
 const TournamentForm = () => {
     //const PROXY = 'https://v1.nocodeapi.com/saebastion/ep/NfYBIrynVPsMmGZq';

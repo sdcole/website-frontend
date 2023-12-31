@@ -1,8 +1,8 @@
 import '../../App.css';
 import { Routes, Route } from 'react-router-dom';
 import {Link} from 'react-router-dom';
-import Home from '../Content/Home/Home';
-import Topics from '../Content/About/About';
+import Home from '../../Pages/Home/Home';
+import Topics from '../../Pages/About/About';
 import Contact from '../Content/Resume/Resume';
 const Header = () => {
     return(
