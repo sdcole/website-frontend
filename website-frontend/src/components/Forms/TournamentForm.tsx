@@ -3,10 +3,11 @@ import {useState} from "react";
 import React, { MouseEvent } from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import LoadingSpinner from '../Content/Materials/LoadingSpinner';
+import LoadingSpinner from '../Materials/LoadingSpinner';
 
 const TournamentForm = () => {
     //const PROXY = 'https://v1.nocodeapi.com/saebastion/ep/NfYBIrynVPsMmGZq';
+    //These variables are used for dynamically changing the screen
     const PROXY = 'http://nullbyte.access.ly:7268/api/main/post';
     const [steamID, setSteamID] = useState("");
     const [discordID, setDiscordID] = useState("");
@@ -52,31 +53,37 @@ const handleClick = (event: React.MouseEvent<HTMLElement>, text: string) => {
         const jsonResult = response;
         let jsonResponse = await jsonResult.json();
 
+        //API Success
         if (response.status === 200) {
             //alert("Thank you " + jsonResponse.steam_name + " you were signed up sucessfully\n" );
             console.log(jsonResponse);
-            setSteamImageSrc(jsonResponse.steamAvatar);
-            setSteamName(jsonResponse.steamName);
-            setDiscordName(jsonResponse.discordUserName);
-            setDiscordImageSrc(jsonResponse.discordAvatar);
-            setUpdateText("You have signed up successfully.");
-    
+            //Check the response of the api
+            if (jsonResponse.success) {
+                setSteamImageSrc(jsonResponse.steamAvatar);
+                setSteamName(jsonResponse.steamName);
+                setDiscordName(jsonResponse.discordUserName);
+                setDiscordImageSrc(jsonResponse.discordAvatar);
+                setUpdateText("You have signed up successfully.");
+            } 
+            //API response has issues so update text accordingly
+            else {
+                if (jsonResponse.validSteamUser == false && jsonResponse.validDiscordUser == false) {
+                    setUpdateText("There was an error please ensure your SteamID and DiscordID is correct and try again.");
+                }
+                else if (jsonResponse.validSteamUser == false) {
+                    setUpdateText("There was an error please ensure your SteamID is correct and try again.");
+                }
+                else if (jsonResponse.validDiscordUser == false) {
+                    setUpdateText("There was an error please ensure your DiscordID is correct and try again.");
+                }
+                else {
+                    setUpdateText("There was an error please ensure data provided is correct and try again.");
+                }
+            }
         }
         else {
             console.log(jsonResponse);
-            if (jsonResponse.validSteamUser == false && jsonResponse.validDiscordUser == false) {
-                setUpdateText("There was an error please ensure your SteamID and DiscordID is correct and try again.");
-            }
-            else if (jsonResponse.validSteamUser == false) {
-                setUpdateText("There was an error please ensure your SteamID is correct and try again.");
-            }
-            else if (jsonResponse.validDiscordUser == false) {
-                setUpdateText("There was an error please ensure your DiscordID is correct and try again.");
-            }
-            else {
-                setUpdateText("There was an error please ensure data provided is correct and try again.");
-            }
-            
+            setUpdateText("There was an issue with connecting to the server"); 
         }
         setIsClicked(false);
         setIsLoading(false);
@@ -87,20 +94,11 @@ const handleClick = (event: React.MouseEvent<HTMLElement>, text: string) => {
         setUpdateText("There was an error connecting to the server please try again.");
         setIsClicked(false);
         setIsLoading(false);
-    }
-    
-
-
-    
-
-    
+    }  
 }
 
 
-  
 
-
-  
     return (
         <div>
             <div className = "form">
@@ -133,7 +131,14 @@ const handleClick = (event: React.MouseEvent<HTMLElement>, text: string) => {
                 </div>
                 <br></br>
                 <div className="form-element">
-                    <Button variant="contained"
+                    <Button 
+                        sx={{ color: '#ECE3CE', backgroundColor: '#739072', borderColor: '#739072', 
+                            ":hover": {
+                            bgcolor: "#3A4D39",
+                            color: "#ECE3CE"
+                          }
+                        }}
+                        variant="contained"
                         onClick={(e) => handleClick(e, "clicked")}
                         disabled = {isClicked}>
                         Submit

@@ -58,7 +58,7 @@
   list-style-type: none;
   margin: 0;
   overflow: hidden;
-  color: white;
+  color: #ECE3CE;
   
   
 }
@@ -146,7 +146,7 @@ ul#nav li {
 }
 
 .MuiInput-root {
-  border-bottom: 1px solid white !important;
+  border-bottom: 1px solid #ECE3CE !important;
 }
 
 
