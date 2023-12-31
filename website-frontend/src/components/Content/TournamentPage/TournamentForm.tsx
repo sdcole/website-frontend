@@ -7,7 +7,7 @@ import LoadingSpinner from '../Materials/LoadingSpinner';
 
 const TournamentForm = () => {
     //const PROXY = 'https://v1.nocodeapi.com/saebastion/ep/NfYBIrynVPsMmGZq';
-    const PROXY = 'https://192.168.0.81:7268/api/main/post';
+    const PROXY = 'http://nullbyte.access.ly:7268/api/main/post';
     const [steamID, setSteamID] = useState("");
     const [discordID, setDiscordID] = useState("");
 
