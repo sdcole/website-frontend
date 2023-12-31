@@ -15,7 +15,7 @@ const Home = () => {
                     <li>C Based languages (C, C++, C#, Java, etc)</li>
                     <li>Web Based Scripting (Perl and Javascript)</li>
                     <li>Low Level language (Windows Batch, UNIX shell, MIPS assembly)</li>
-                    <li>Embedded Systems (Raspberry Pi/Pico and other microcontrollers)</li>
+                    <li>Embedded Systems (Raspberry Pi/Pico, Arduino, and other microcontrollers)</li>
 
                 </ul>
             <br></br>

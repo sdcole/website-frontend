@@ -10,7 +10,7 @@ const Header = () => {
         <p id="logo-text">Saebastion's Website</p>
         <ul id="nav">
             <li><Link className="text-link" to='/tournament'>Tournament</Link></li>
-            <li><Link className="text-link" to ='/gallery'>Gallery</Link></li>
+            <li><Link className="text-link" to ='/projects'>Projects</Link></li>
             <li><Link className="text-link" to='/about'>About</Link></li>
             <li><Link className="text-link" to='/'>Home</Link></li>
 
