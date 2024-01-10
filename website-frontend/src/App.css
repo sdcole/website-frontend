@@ -142,7 +142,7 @@ ul#nav li {
 }
 .loading-spinner {
 
-  animation: spinner  ease 1.5s infinite;
+  animation: spinner  ease 0.75s infinite;
 }
 
 .MuiInput-root {
