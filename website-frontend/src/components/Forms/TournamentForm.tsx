@@ -8,7 +8,9 @@ import LoadingSpinner from '../Materials/LoadingSpinner';
 const TournamentForm = () => {
     //const PROXY = 'https://v1.nocodeapi.com/saebastion/ep/NfYBIrynVPsMmGZq';
     //These variables are used for dynamically changing the screen
-    const PROXY = 'http://nullbyte.access.ly:7268/api/main/post';
+    //const PROXY = 'http://nullbyte.access.ly:7268/api/main/post';
+
+    const PROXY = 'https://192.168.0.10:7268/api/main/post';
     const [steamID, setSteamID] = useState("");
     const [discordID, setDiscordID] = useState("");
 
