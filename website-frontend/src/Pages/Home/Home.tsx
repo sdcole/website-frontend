@@ -1,4 +1,7 @@
 import '../../App.css';
+import Button from '@mui/material/Button';
+import {Link} from 'react-router-dom';
+
 const Home = () => {
     return (
         <div className="home">
@@ -10,7 +13,17 @@ const Home = () => {
                 <h2>Quake Tournament</h2>
                 <p>I am planning on having a quake tournament soon.</p>
                 <p>If interested please look at the registration </p>
-                <p>HERE</p>
+                <Button 
+                        sx={{ color: '#ECE3CE', backgroundColor: '#739072', borderColor: '#739072', 
+                            ":hover": {
+                            bgcolor: "#3A4D39",
+                            color: "#ECE3CE"
+                            }
+                        }}
+                        variant="contained"
+                        component={Link} to={'/tournament'}>
+                        Register
+                </Button>
             </div>
             
         </div>

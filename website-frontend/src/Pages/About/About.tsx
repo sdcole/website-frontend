@@ -2,22 +2,28 @@ import '../../App.css';
 import Button from '@mui/material/Button';
 import {useState} from "react";
 
-const [isClicked, setIsClicked] = useState(false);
-const [isLoading, setIsLoading] = useState(false);
+
+
 
 //When pressed call api for resume
-const handleClick = (event: React.MouseEvent<HTMLElement>, text: string) => {
-    //TODO: Here we need to create an api call that returns and shows the pdf
-    try {
-        console.log("Clicked");
-    }
-    catch {
 
-    }
-    
-  };
 
 const About = () => {
+    const [isClicked, setIsClicked] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+
+    const handleClick = (event: React.MouseEvent<HTMLElement>, text: string) => {
+        //TODO: Here we need to create an api call that returns and shows the pdf
+        try {
+            console.log("Clicked");
+        }
+        catch {
+    
+        }
+        
+    };
+
+
     return (
         <div id="About">
             <br></br>
@@ -25,7 +31,6 @@ const About = () => {
                 <br></br>
             <h2>Education</h2>
                 <p>Graduated 2022 from University of Nebraska Omaha with a Bachelors of Science in Computer Science.</p>
-                <br></br>
             <h2>Tech Stack</h2>
                 <p>I have experience in a wide range of technologies including:</p>
                 <ul className="ul-left">
@@ -53,14 +58,14 @@ const About = () => {
                             ":hover": {
                             bgcolor: "#3A4D39",
                             color: "#ECE3CE"
-                          }
+                            }
                         }}
                         variant="contained"
                         onClick={(e) => handleClick(e, "clicked")}
                         disabled = {isClicked}>
                         HERE
                     </Button>
-                    </div>
+                </div>
                 
         </div>
     );
