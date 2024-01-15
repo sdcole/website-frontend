@@ -3,7 +3,7 @@ import {useState} from "react";
 import React, { MouseEvent } from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import LoadingSpinner from '../../components/LoadingSpinner';
+import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner.component';
 
 
 const TournamentForm = () => {

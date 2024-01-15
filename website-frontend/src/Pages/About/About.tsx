@@ -25,7 +25,7 @@ const About = () => {
 
 
     return (
-        <div id="About">
+        <div id="content">
             <br></br>
             <h1>About</h1>
                 <br></br>

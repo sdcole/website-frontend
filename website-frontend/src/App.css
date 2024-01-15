@@ -1,6 +1,11 @@
 
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+.App {
+  text-align: center;
+  font-family: 'Roboto', serif;
+}
+
 #container {
   height: 100vh;
   width: 100vh;
@@ -18,10 +23,7 @@
   list-style-type: none;
 }
 
-.App {
-  text-align: center;
-  font-family: 'Roboto', serif;
-}
+
 .form {
   margin: 10vh;
 }
@@ -56,11 +58,9 @@
 }
 
 #nav {
-  text-decoration-color: #61dafb;
   list-style-type: none;
-  margin: 0;
-  overflow: hidden;
-  color: #ECE3CE;
+  display: flex; /* Use flexbox to make the list horizontal */
+  align-items: center; /* Vertically align items in the center */
   
   
 }
@@ -70,7 +70,12 @@
   text-decoration-color: #61dafb;
   height: 10vh;
   margin: 0;
-  color:#ECE3CE;
+  color: #ECE3CE;
+  display: flex;
+  align-items: center; /* Vertically align items in the center */
+  justify-content: space-between; /* Add space between the logo and the nav */
+  padding: 0 2vh; /* Add padding to the sides for spacing */
+  box-sizing: border-box; /* Include padding in the total width */
 }
 
 #content {
@@ -85,19 +90,6 @@
   
 }
 
-.home {
-  background-color: #ECE3CE;
-  text-decoration-color: #4F6F52;
-  list-style-type: none;
-  margin: 0;
-
-  height: 80vh;
-  color: #4F6F52;
-  
-  
-}
-
-
 
 
 .text-link {
@@ -105,16 +97,9 @@
   text-decoration: none;
 }
 
-#logo-text {
-  float: left;
-  padding-left: 5vh;
-  font-size: 3vh;
-}
-
 ul#nav li {
-  float: right;
-  padding-right: 3vh;
-  padding-top: 4vh;
+  display: inline-block; /* Display list items as inline elements */
+  margin-right: 3vh; /* Adjust the right margin as needed for spacing between items */
   font-size: 2vh;
 }
 .App-content {
@@ -161,19 +146,38 @@ ul#nav li {
   border-bottom: 1px solid #ECE3CE !important;
 }
 
-@keyframes slideIn {
+@keyframes slideInTitle {
   from {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateX(-20vh);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
 
-.home h1 {
-  animation: slideIn 1s ease-out; /* Adjust the duration and timing function as needed */
+
+@keyframes slideInContent {
+  from {
+    opacity: 0;
+    transform: translateX(-20vh);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.Page-transition-title {
+  animation: slideInTitle 1.5s ease-out; /* Adjust the duration and timing function as needed */
+}
+
+.Page-transition-content {
+  animation-name: slideInContent;
+  animation-duration: 1.5s; /* Adjust the duration and timing function as needed */
+  animation-timing-function: ease-out;
+  animation-delay: .25s; /* Adjust the delay to start after the title animation */
+  animation-fill-mode: both; /* Ensure styles are applied before and after animation */
 }
 
 
@@ -189,7 +193,7 @@ ul#nav li {
 }
 
 .news-content {
-  font-size: 1.5vmin;
+  font-size: 2.5vmin;
 }
 
 .center-news {

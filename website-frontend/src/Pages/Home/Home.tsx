@@ -4,6 +4,18 @@ import {Link} from 'react-router-dom';
 import {useState} from "react";
 
 const Home = () => {
+
+    const [nextIsClicked, setNextIsClicked] = useState(false);
+    const [NextIsLoading, setNextIsLoading] = useState(false);
+
+    const [prevIsClicked, setPrevIsClicked] = useState(false);
+    const [prevIsLoading, setPrevIsLoading] = useState(false);
+
+    const handleNextClick = (event: React.MouseEvent<HTMLElement>, text: string) => {
+
+      
+      
+  };
     const newsItems = [
       {
         title: 'Quake Tournament',
@@ -36,8 +48,32 @@ const Home = () => {
         <p>Take a look around!</p>
         <h2>News</h2>
         <div>
-            <button onClick={showPrevNews}>&lt; Prev</button>
-            <button onClick={showNextNews}>Next &gt;</button>
+        <Button 
+          sx={{ color: '#ECE3CE', backgroundColor: '#739072', borderColor: '#739072', 
+          ":hover": {
+          bgcolor: "#3A4D39",
+          color: "#ECE3CE"
+          }
+          }}
+          variant="contained"
+          onClick={showPrevNews}
+          disabled = {prevIsClicked}>
+          Previous
+          </Button>
+        <Button 
+          sx={{ color: '#ECE3CE', backgroundColor: '#739072', borderColor: '#739072', 
+          ":hover": {
+          bgcolor: "#3A4D39",
+          color: "#ECE3CE"
+          }
+          }}
+          variant="contained"
+          onClick={showNextNews}
+          disabled = {nextIsClicked}>
+          Next
+          </Button>
+          
+
           </div>
         <div id="news" className="center-news">
           
