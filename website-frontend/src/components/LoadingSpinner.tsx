@@ -1,5 +1,5 @@
-import '../../App.css';
-import loadingImage from '../../images/loadingSpinner.png';
+import '../App.css';
+import loadingImage from '../images/loadingSpinner.png';
 const LoadingSpinner = () => {
     return (
         <div className="direction">

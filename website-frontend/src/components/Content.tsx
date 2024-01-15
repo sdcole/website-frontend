@@ -1,9 +1,9 @@
-import '../../App.css';
+import '../App.css';
 import { Routes, Route } from 'react-router-dom';
-import Home from '../../Pages/Home/Home';
-import About from '../../Pages/About/About';
-import Projects from '../../Pages/Projects/Projects';
-import Tournament from '../../Pages/Tournament/Tournament'
+import Home from '../Pages/Home/Home';
+import About from '../Pages/About/About';
+import Projects from '../Pages/Projects/Projects';
+import Tournament from '../Pages/Tournament/Tournament'
 
 const Content = () => {
 return (
