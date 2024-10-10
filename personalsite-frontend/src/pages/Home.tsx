@@ -1,32 +1,33 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button } from '@mui/material';
-
+import { Button, Typography } from '@mui/material';
+import TopPageCode from '../components/TopPageCode';
+import BottomPageCode from '../components/BottomPageCode';
 
 const Home = () => {
-    const navigate = useNavigate();
-
-
-    const goToAboutPage = () => {
-        navigate('/about'); // This changes the route to the "/about" page
-    };
 
     return (
-        <><div className='home-code-container'>
-            <div className='home-code-line1'>
-                <p>class <span className='secondary-code'>Program &#123;</span></p>
+        <div className='page-container'>
+            <TopPageCode/>
+
+            <div className='page-content'>
+                <Typography variant="h2" component="h1" className="home-header" gutterBottom>
+                    Saebastion Cole
+                </Typography>
+                <Typography variant="body1" paragraph>
+                    Hi, I'm Saebastion, welcome to my personal site.
+                </Typography>
+                <Typography variant="body1" paragraph>
+                    I am a software engineer currently specializing in batch file-driven and full-stack applications.
+                </Typography>
+                <Typography variant="body1" paragraph>
+                    Take a look around!
+                </Typography>
             </div>
-            <div className='home-code-line2'>
-                <p>static void <span className='secondary-code'>Main</span>&#40;string&#91;&#93; args&#41; &#123;</p>
-            </div>
-            
-        </div><div>
-                <h1>Home Page</h1>
-                <Button variant="contained" onClick={goToAboutPage}>
-                    Go to About Page
-                </Button>
-            </div></>
+
+            <BottomPageCode/>
+        </div>
     );
-}
+};
 
 export default Home;

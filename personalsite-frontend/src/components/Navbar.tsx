@@ -25,7 +25,7 @@ const Navbar = () => {
           onClick={() => navigate('/about')}
           className='navbar-route'  // Correct use of className here
         >
-          About
+          About Me
         </Button>
         <Button
           variant="text"
