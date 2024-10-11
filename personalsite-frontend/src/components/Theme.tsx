@@ -18,14 +18,14 @@ const Theme = createTheme({
                     backgroundColor: 'transparent', // Make sure the background is transparent
                     color: '#C5C3C7', // Custom text color
                     '&:hover': {
-                        backgroundColor: '#38d197', // Hover effect
+                        backgroundColor: '#45A29E', // Hover effect
                     },
                 },
                 outlined: {
                     borderColor: '#42f5b0', // Custom border color for outlined buttons
                     color: '#C5C3C7', // Custom text color
                     '&:hover': {
-                        borderColor: '#38d197', // Hover effect for outlined buttons
+                        borderColor: '#45A29E', // Hover effect for outlined buttons
                     },
                 },
                 text: {
@@ -33,7 +33,7 @@ const Theme = createTheme({
                     backgroundColor: 'transparent', // Make sure the background is transparent
                     '&:hover': {
                         backgroundColor: '#1f2833', // Custom hover background for text buttons
-                        color: '#42f5b0', // Hover text color change
+                        color: '#45A29E', // Hover text color change
                     },
                 },
             },
