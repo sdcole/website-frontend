@@ -118,6 +118,9 @@
   margin-top: auto; /* Ensures the footer sticks to the bottom */
 }
 
+.footer-icon-container {
+  justify-content: center;
+}
 .code-container {
   font-family: "Source Code Pro", monospace;
   opacity: 0.4;
@@ -144,6 +147,7 @@
 }
 .page-container {
   flex: 1;
+  margin-right: 2vw;
 }
 .secondary-code {
   color: #45A29E;

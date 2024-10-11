@@ -27,6 +27,10 @@ const Projects = () => {
                 </Link>
                 </Typography>
                 
+                <Typography variant="body1" paragraph>
+                  The following are some of my favorites:
+                </Typography>
+
                 <Typography variant="h3" component="h2" className="header" gutterBottom>
                   <Link 
                   href="https://github.com/sdcole/recent-trading-data" 
@@ -46,12 +50,59 @@ const Projects = () => {
 
                 <Typography variant="h4" component="h3" className="header" gutterBottom>
                   Tech Stack
-                
+                </Typography>
+
                 <ul>
                   <li>Language: C# (.NET 8)</li>
                   <li>Library: PostgreSQL DB, AlpaciAPI</li>
+                  <li>OS: Windows</li>
                 </ul>
+                
+
+
+                <Typography variant="h3" component="h2" className="header" gutterBottom>
+                  Capstone
                 </Typography>
+                <Typography variant="h4" component="h3" className="header" gutterBottom>
+                <Link 
+                  href="https://github.com/RoschenJ/Capstone-FrontEnd" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  underline="none"
+                  color="#45A29E"
+                >
+                  Frontend
+                </Link>
+                </Typography>
+                <Typography variant="h4" component="h3" className="header" gutterBottom>
+                <Link 
+                  href="https://github.com/RoschenJ/Capstone-BackEnd" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  underline="none"
+                  color="#45A29E"
+                >
+                  Backend
+                </Link>
+                </Typography>
+                <Typography variant="body1" paragraph>
+                    For my Capstone I worked in a team provided requirements from BuilderTrend(a construction solution company).
+                    At the time AI was just an emerging technology. They gave us a project in which we were to explore a few use cases with AI.
+                    The application uses both object recognition and OCR. The object recognition takes in a picture and returns keywords to what it is with a confidence score alongside.
+                    We utilized OCR (Optical Character Recognition) to take receipts and convert them to text.
+                </Typography>
+                <Typography variant="h4" component="h3" className="header" gutterBottom>
+                  Tech Stack
+                </Typography>
+
+                <ul>
+                  <li>Language: C# (ASP .NET CORE API Backend), React/Typescript (Frontend)</li>
+                  <li>Library: Google AI</li>
+                  <li>OS: Windows</li>
+                </ul>
+
+
+
 
 
                 <Typography variant="h3" component="h2" className="header" gutterBottom>
@@ -73,12 +124,13 @@ const Projects = () => {
                 </Typography>
                 <Typography variant="h4" component="h3" className="header" gutterBottom>
                   Tech Stack
-                
+                </Typography>
                 <ul>
                   <li>Language: Python</li>
                   <li>Hardware: Raspberry Pi, USB Microphone, 5 Volt Relay, Cheap Desk Lamp</li>
+                  <li>OS: Raspian (Linux)</li>
                 </ul>
-                </Typography>
+                
             </div>
 
             <BottomPageCode/>
