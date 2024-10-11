@@ -1,6 +1,4 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Button, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import TopPageCode from '../components/TopPageCode';
 import BottomPageCode from '../components/BottomPageCode';
 import {Link} from '@mui/material';
