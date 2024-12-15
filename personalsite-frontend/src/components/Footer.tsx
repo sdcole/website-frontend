@@ -17,7 +17,9 @@ const Footer = () => {
               <FaLinkedin size={30} color="#0A66C2" /> {/* LinkedIn blue */}
           </a>
           </div>
+          <div>Saebastion Cole 2024</div>
         </div>
+
   );
 };
 
