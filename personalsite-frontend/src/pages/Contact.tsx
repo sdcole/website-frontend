@@ -10,7 +10,7 @@ const Contact = () => {
             <TopPageCode/>
 
             <div className='page-content'>
-                <Typography variant="h2" component="h1" className="home-header" gutterBottom>
+                <Typography variant="h2" component="h1" className="header" gutterBottom>
                     Contact Me
                 </Typography>
                 <Typography variant="body1" paragraph>
