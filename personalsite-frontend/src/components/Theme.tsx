@@ -1,18 +1,12 @@
 import { createTheme } from '@mui/material/styles';
 
-/*
-*   Theme
-*   Theme is the setup for MUI materials.
-*   This file dictates how the MUI materials layout for the entire site is setup
-*
-*/
 const Theme = createTheme({
     components: {
         MuiButton: {
             styleOverrides: {
                 root: {
                     borderRadius: '8px', // Custom border radius
-                    padding: '10px 20px', // Custom padding
+                    padding: '1vw', // Custom padding
                 },
                 contained: {
                     backgroundColor: 'transparent', // Make sure the background is transparent
@@ -37,6 +31,45 @@ const Theme = createTheme({
                     },
                 },
             },
+        },
+    },
+    typography: {
+        h2: {
+            fontSize: '4rem', // Base font size for large screens
+            '@media (max-width:900px)': {
+                fontSize: '2.5rem', // Adjust font size for small screens
+            },
+            '@media (max-width:600px)': {
+                fontSize: '2rem', // Adjust font size for medium screens
+            },
+        },
+        h3: {
+            fontSize: '3rem', // Base font size for large screens
+            '@media (max-width:900px)': {
+                fontSize: '1.5rem', // Adjust font size for small screens
+            },
+            '@media (max-width:600px)': {
+                fontSize: '1rem', // Adjust font size for medium screens
+            },
+        },
+        body1: {
+            fontSize: '1.25rem', // Base font size for large screens
+            '@media (max-width:1200px)': {
+                fontSize: '1rem', // Adjust font size for medium screens
+            },
+            '@media (max-width:1000px)': {
+                fontSize: '.9rem', // Adjust font size for medium screens
+            },
+            '@media (max-width:900px)': {
+                fontSize: '.8rem', // Adjust font size for medium screens
+            },
+            '@media (max-width:800px)': {
+                fontSize: '.75rem', // Adjust font size for medium screens
+            },
+            '@media (max-width:600px)': {
+                fontSize: '.5rem', // Adjust font size for small screens
+            },
+            
         },
     },
 });
