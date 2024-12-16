@@ -5,7 +5,7 @@ const Theme = createTheme({
         MuiButton: {
             styleOverrides: {
                 root: {
-                    borderRadius: '8px', // Custom border radius
+                    borderRadius: '6px', // Custom border radius
                     padding: '1vw', // Custom padding
                 },
                 contained: {
