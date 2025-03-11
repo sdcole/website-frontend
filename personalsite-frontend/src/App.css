@@ -129,6 +129,9 @@
   color: #45A29E;
 }
 
+.tertiary-code {
+  color: #4be9c7;
+}
 .blinking-cursor::after {
   content: '|';
   animation: blink 1s step-start infinite;
@@ -166,6 +169,9 @@
   z-index: 1;
   flex-direction: column; /* Vertical layout for desktop */
 }
+
+
+
 
 /*Desktop Style*/
 @media (min-width: 600px) {
