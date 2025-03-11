@@ -20,7 +20,7 @@ const About = ({visitorCount}: Props) => {
                   About Me
               </Typography>
               <Typography variant="body1" paragraph>
-                I am an driven developer that has been doing it in my free time since I was 12.
+                I am a driven developer that has been tinkering since I was 12.
               </Typography>
               <Typography variant="body1" paragraph>
                   I began my journey working with windows batch scripting. From there I began learning more common high level languages.
