@@ -16,7 +16,7 @@ function App() {
 
   const makePostCall = async (): Promise<void> => {
     try {
-      const response = await axios.post<number>('https://nullbyte.access.ly/api/v1/visitor-tracker');
+      const response = await axios.post<number>('https://api.meshservice.work/api/v1/visitor-tracker');
       const result = response.data;
       setVisitorCount(result); // Store the result in the state
     } catch (error) {
