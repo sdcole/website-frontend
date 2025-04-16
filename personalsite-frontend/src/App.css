@@ -132,16 +132,16 @@
 .tertiary-code {
   color: #4be9c7;
 }
-.blinking-cursor::after {
-  content: '|';
-  animation: blink 1s step-start infinite;
-  color: #C5C6C7; /* Matches the color of the code */
+.blinking-cursor {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #00ff88;
+  animation: blink 1s step-end infinite;
 }
 
 @keyframes blink {
-  50% {
-    opacity: 0;
-  }
+  from, to { opacity: 0; }
+  50% { opacity: 1; }
 }
 
 .fade-container {

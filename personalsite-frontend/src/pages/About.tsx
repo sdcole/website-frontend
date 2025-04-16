@@ -34,14 +34,14 @@ const About = ({visitorCount}: Props) => {
               </Typography>
               <Typography variant="body1" paragraph>
                 I have experience in the following systems:
-                <ul>
+              </Typography>
+              <ul>
                   <li>Servers/OS's - Windows Server, Linux, IBM AIX(UNIX), TPX(Mainframe) </li>
                   <li>Languages - C#, VB.NET, C++, C, Java, Javascript/Typescript, Python, COBOL, JCL</li>
                   <li>Frameworks - .NET(Framework and Standard), React/Vite, Arduino</li>
                   <li>Databases - Oracle(PLSQL), Microsoft(MSSQL), Postgresql</li>
                   <li>Microcontrollers/processors - Arduino, Raspberry Pi</li>
                 </ul>
-              </Typography>
             </div>
 
             <BottomPageCode/>

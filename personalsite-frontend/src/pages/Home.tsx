@@ -1,6 +1,7 @@
 import { Typography } from '@mui/material';
 import TopPageCode from '../components/TopPageCode';
 import BottomPageCode from '../components/BottomPageCode';
+import TypingEffect from '../components/TypingEffect';
 
 interface Props {
     visitorCount: number | null;
@@ -19,7 +20,9 @@ const Home = ({visitorCount}: Props) => {
           </Typography>
         </div>
         <Typography variant="h2" component="h1" className="header" gutterBottom>
-          Saebastion Cole
+          
+
+          <TypingEffect />
         </Typography>
         <Typography variant="body1" paragraph>
           Hi, I'm Saebastion, welcome to my personal site.
