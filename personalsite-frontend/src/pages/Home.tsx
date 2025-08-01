@@ -5,9 +5,11 @@ import TypingEffect from '../components/TypingEffect';
 
 interface Props {
     visitorCount: number | null;
+    showHomeAnimation: boolean;
+    setShowHomeAnimation: (show: boolean) => void;
   }
 
-const Home = ({visitorCount}: Props) => {
+const Home = ({visitorCount, showHomeAnimation, setShowHomeAnimation}: Props) => {
 
   return (
     <div className="page-container">
@@ -22,7 +24,7 @@ const Home = ({visitorCount}: Props) => {
         <Typography variant="h2" component="h1" className="header" gutterBottom>
           
 
-          <TypingEffect />
+          <TypingEffect showHomeAnimation={showHomeAnimation} setShowHomeAnimation={setShowHomeAnimation}/>
         </Typography>
         <Typography variant="body1" paragraph>
           Hi, I'm Saebastion, welcome to my personal site.

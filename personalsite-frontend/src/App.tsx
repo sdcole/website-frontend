@@ -13,6 +13,7 @@ function App() {
   const location = useLocation();
   
   const [visitorCount, setVisitorCount] = useState<number | null>(null);
+  const [showHomeAnimation, setShowHomeAnimation] = useState<boolean>(true);
 
   const makePostCall = async (): Promise<void> => {
     try {
@@ -34,7 +35,7 @@ function App() {
       <div className='content-container'>
       <div className="fade-container" key={location.pathname}>
           <Routes location={location}>
-            <Route path="/" element={<Home visitorCount={visitorCount}/>} />
+            <Route path="/" element={<Home visitorCount={visitorCount} showHomeAnimation={showHomeAnimation} setShowHomeAnimation={setShowHomeAnimation}/>} />
             <Route path="/about" element={<About visitorCount={visitorCount}/>} />
             <Route path="/projects" element={<Projects visitorCount={visitorCount}/>}/>
             <Route path="/contact" element={<Contact visitorCount={visitorCount}/>}/>

@@ -6,13 +6,19 @@
 #45A29E
 */
 
-#root {
+html, body, #root {
   width: 100%;
   height: 100%;
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+#root {
   display: flex;
   flex-direction: column;
   font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
 }
 
 .logo {
@@ -53,11 +59,17 @@
   color: #888;
 }
 
+
+/* Make container a column flexbox to allow sticky footer */
 .container {
   display: flex;
-  flex: 1;
-  flex-direction: row; /* Default is row for desktop */
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
+
 
 
 
@@ -78,12 +90,14 @@
 }
 
 /* Main content section */
+/* Main content section grows to fill space between navbar and footer */
 .content-container {
   display: flex;
-  flex-direction: column; /* Makes elements inside stack vertically */
-  min-height: 100vh; /* Ensures container takes the full height of viewport */
-  width: 100%; /* Ensure full width */
+  flex-direction: column;
+  flex: 1 0 auto;
+  width: 100%;
 }
+
 
 .page-container {
   overflow-x:hidden;
@@ -177,8 +191,7 @@
 @media (min-width: 600px) {
   .content-container {
     margin-left: 10vw;
-    }
-
+  }
   /* Footer section */
   .footer {
     width: 100%;
@@ -187,7 +200,8 @@
     background-color: #1F2833;
     color: white;
     text-align: center;
-    margin-top: auto; /* Ensures the footer sticks to the bottom */
+    margin-top: auto;
+    flex-shrink: 0;
   }
   /* Left navbar styles */
 .navbar {
@@ -217,16 +231,22 @@
 @media (max-width: 600px) {
   .container {
     flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
-
   /* Footer section */
-.footer {
-  width: 100%;
-  background-color: #1F2833;
-  color: white;
-  text-align: center;
-  margin-top: auto; /* Ensures the footer sticks to the bottom */
-}
+  .footer {
+    width: 100%;
+    background-color: #1F2833;
+    color: white;
+    text-align: center;
+    margin-top: auto;
+    flex-shrink: 0;
+    padding: 0.75em 0.25em;
+    font-size: 0.95rem;
+  }
   .navbar {
     width: 100vw; /* Full width for mobile */
     height: auto; /* Allow height to adjust based on content */

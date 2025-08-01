@@ -1,7 +1,12 @@
 import { useEffect, useState } from 'react';
 import { Typography } from '@mui/material';
 
-const TypingEffect = () => {
+interface Props {
+    showHomeAnimation: boolean;
+    setShowHomeAnimation: (show: boolean) => void;
+  }
+
+const TypingEffect = ({showHomeAnimation, setShowHomeAnimation}: Props) => {
   const initialText = 'Console.WriteLine("Hello World!");';
   const finalText = '//Saebastion Cole';
 
@@ -12,8 +17,11 @@ const TypingEffect = () => {
   useEffect(() => {
     let timeout: ReturnType<typeof setTimeout>;
 
-
-    if (step === 'typing' && index < initialText.length) {
+    if (!showHomeAnimation) {
+      setDisplayText(finalText)
+    }
+    else {
+      if (step === 'typing' && index < initialText.length) {
       timeout = setTimeout(() => {
         setDisplayText((prev) => prev + initialText[index]);
         setIndex(index + 1);
@@ -38,16 +46,25 @@ const TypingEffect = () => {
         setDisplayText((prev) => prev + finalText[index]);
         setIndex(index + 1);
       }, 75);
+    } else if (step === 'final' && index === finalText.length) {
+      // Animation finished, only run once
+      setShowHomeAnimation(false);
     }
+    }
+    
 
     return () => clearTimeout(timeout);
-  }, [index, step]);
+  }, [index, step, showHomeAnimation, setShowHomeAnimation]);
+
+  if (!showHomeAnimation && displayText === '') return null;
 
   return (
-    <Typography variant="h5" fontFamily="'Source Code Pro', monospace">
-      {displayText}
-      <span className="blinking-cursor">|</span>
-    </Typography>
+    <div style={{ width: '100%' }}>
+      <Typography variant="h5" fontFamily="'Source Code Pro', monospace">
+        {displayText}
+        <span className="blinking-cursor">|</span>
+      </Typography>
+    </div>
   );
 };
 export default TypingEffect;
