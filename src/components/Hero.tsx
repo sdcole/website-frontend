@@ -6,6 +6,7 @@ import { GitHub, LinkedIn, Email, Download } from '@mui/icons-material';
 import axios from 'axios';
 
 export default function Hero() {
+  const [mounted, setMounted] = useState(false);
   const [visitorCount, setVisitorCount] = useState<number | null>(null);
   const [typedText, setTypedText] = useState('');
   const [showCursor, setShowCursor] = useState(true);
@@ -16,6 +17,11 @@ export default function Hero() {
 
   const fullText = 'Console.WriteLine("Hello World!");';
   const nameFullText = "Hello, I'm Saebastion";
+
+  // Only start animations after hydration
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     // Fetch visitor count from API
@@ -34,16 +40,17 @@ export default function Hero() {
   }, []);
 
   useEffect(() => {
+    if (!mounted) return;
     // Blinking cursor
     const cursorInterval = setInterval(() => {
       setShowCursor((prev) => !prev);
     }, 500);
 
     return () => clearInterval(cursorInterval);
-  }, []);
+  }, [mounted]);
 
   useEffect(() => {
-    if (animationComplete) return; // Stop animation once complete
+    if (!mounted || animationComplete) return; // Stop animation once complete or not mounted
 
     let timeout: NodeJS.Timeout;
 
@@ -69,7 +76,7 @@ export default function Hero() {
     }
 
     return () => clearTimeout(timeout);
-  }, [typedText, fullText, animationComplete, isDeleting]);
+  }, [mounted, typedText, fullText, animationComplete, isDeleting]);
 
   // Type name after first animation completes
   useEffect(() => {
