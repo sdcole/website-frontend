@@ -47,7 +47,7 @@ export default function Footer() {
               <GitHub />
             </IconButton>
             <IconButton
-              href="https://linkedin.com/in/yourusername"
+              href="https://linkedin.com/in/saebastion-cole"
               target="_blank"
               rel="noopener noreferrer"
               sx={{
