@@ -107,7 +107,7 @@ export default function Hero() {
       }}
     >
       <Container maxWidth="lg">
-        <Box sx={{ py: 8 }}>
+        <Box sx={{ py: { xs: 4, md: 8 } }}>
           {/* C# Code Structure */}
           <Box
             component="pre"
@@ -117,6 +117,7 @@ export default function Hero() {
               margin: 0,
               mb: 1,
               userSelect: 'none',
+              overflowX: 'hidden',
             }}
           >
             <Box component="span" sx={{ color: '#0000ff', opacity: 0.4 }}>namespace</Box>
@@ -140,7 +141,7 @@ export default function Hero() {
           </Box>
 
           {/* Visitor Count - Indented with content */}
-          <Box sx={{ pl: { xs: 6, sm: 8, md: 12 } }}>
+          <Box sx={{ pl: { xs: 3, sm: 8, md: 12 } }}>
             <Box
               component="pre"
               sx={{
@@ -149,6 +150,7 @@ export default function Hero() {
                 margin: 0,
                 mb: 2,
                 userSelect: 'none',
+                overflowX: 'hidden',
               }}
             >
               <Box component="span" sx={{ color: '#0000ff', opacity: 0.4 }}>int</Box>
@@ -168,7 +170,7 @@ export default function Hero() {
                 component="pre"
                 sx={{
                   fontFamily: 'var(--font-geist-mono), monospace',
-                  fontSize: { xs: '1rem', sm: '1.2rem', md: '1.5rem' },
+                  fontSize: { xs: '0.7rem', sm: '1.2rem', md: '1.5rem' },
                   color: '#000000',
                   margin: 0,
                   minHeight: '2em',
@@ -242,12 +244,13 @@ export default function Hero() {
                     maxWidth: '600px',
                     lineHeight: 1.8,
                     opacity: 0.9,
+                    fontSize: { xs: '1rem', md: '1.25rem' },
                   }}
                 >
                   Building robust backend systems and data-driven solutions.
                   Specializing in database architecture, API development, and scalable server-side applications.
                 </Typography>
-                <Stack direction="row" spacing={2} sx={{ mb: 4, flexWrap: 'wrap' }}>
+                <Stack direction="row" spacing={2} useFlexGap sx={{ mb: 4, flexWrap: 'wrap' }}>
                   <Button
                     variant="contained"
                     size="large"
@@ -336,6 +339,7 @@ export default function Hero() {
               margin: 0,
               mt: 1,
               userSelect: 'none',
+              overflowX: 'hidden',
             }}
           >
             <Box component="span" sx={{ color: '#000000', opacity: 0.3 }}>{'    }'}</Box>

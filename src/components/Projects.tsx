@@ -45,7 +45,7 @@ export default function Projects() {
     <Box
       id="projects"
       sx={{
-        py: 10,
+        py: { xs: 6, md: 10 },
         bgcolor: 'background.default',
       }}
     >
@@ -66,7 +66,7 @@ export default function Projects() {
           variant="h6"
           component="p"
           sx={{
-            mb: 8,
+            mb: { xs: 4, md: 8 },
             textAlign: 'center',
             color: 'text.secondary',
             maxWidth: '800px',

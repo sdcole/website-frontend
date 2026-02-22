@@ -37,7 +37,7 @@ export default function Skills() {
     <Box
       id="skills"
       sx={{
-        py: 10,
+        py: { xs: 6, md: 10 },
         bgcolor: 'background.paper',
       }}
     >
@@ -58,7 +58,7 @@ export default function Skills() {
           variant="h6"
           component="p"
           sx={{
-            mb: 8,
+            mb: { xs: 4, md: 8 },
             textAlign: 'center',
             color: 'text.secondary',
             maxWidth: '800px',
@@ -69,7 +69,7 @@ export default function Skills() {
         </Typography>
         <Grid container spacing={4} justifyContent="center">
           {skillCategories.map((category, categoryIndex) => (
-            <Grid size={{ xs: 12, md: 4 }} key={categoryIndex}>
+            <Grid size={{ xs: 12, sm: 6, md: 4 }} key={categoryIndex}>
               <Paper
                 elevation={0}
                 sx={{
