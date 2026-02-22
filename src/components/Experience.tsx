@@ -6,14 +6,25 @@ import { WorkOutline } from '@mui/icons-material';
 const experiences = [
   {
     company: 'Fiserv',
+    role: 'Software Development Engineering - Senior Professional I',
+    period: 'Jan 2026 - Present',
+    achievements: [
+      'Develop and maintain embedded software for manufacturing machinery, ensuring high performance and reliability',
+      'Provide stakeholders support and solutions for data analytics, reporting, and new feature development',
+      'Used low level programming and real-time operating systems to optimize performance and resource utilization',
+    ],
+    technologies: ['C#', 'C++', 'Embedded Development', 'RTOS', 'Oracle SQL Server'],
+  },
+  {
+    company: 'Fiserv',
     role: 'Software Development Engineering - Professional II',
-    period: 'Jul 2025 - Present',
+    period: 'Jul 2025 - Jan 2026',
     achievements: [
       'Maintain critical production workflows ensuring system reliability and uptime',
       'Modernize legacy systems with updated architecture and best practices',
       'Integrate and optimize CI/CD pipelines for streamlined deployment processes',
     ],
-    technologies: ['C#', '.NET', 'CI/CD', 'Azure DevOps', 'SQL Server'],
+    technologies: ['C#', '.NET', 'CI/CD', 'Git', 'SQL Server'],
   },
   {
     company: 'Fiserv',
@@ -44,7 +55,7 @@ export default function Experience() {
     <Box
       id="experience"
       sx={{
-        py: 10,
+        py: { xs: 6, md: 10 },
         bgcolor: 'background.default',
       }}
     >
@@ -65,7 +76,7 @@ export default function Experience() {
           variant="h6"
           component="p"
           sx={{
-            mb: 8,
+            mb: { xs: 4, md: 8 },
             textAlign: 'center',
             color: 'text.secondary',
             maxWidth: '800px',
@@ -155,7 +166,7 @@ export default function Experience() {
                       <Typography
                         variant="h5"
                         component="h3"
-                        sx={{ fontWeight: 600, mb: 0.5 }}
+                        sx={{ fontWeight: 600, mb: 0.5, fontSize: { xs: '0.95rem', sm: '1.25rem' } }}
                       >
                         {exp.role}
                       </Typography>
